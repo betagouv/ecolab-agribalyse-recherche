@@ -1,6 +1,33 @@
 # on a un jeu de 22 cartes correspondant aux 22 arcanes
 arcanes_majeurs = ["Le Bateleur", "La Papesse", "L'Impératrice", "L'Empereur","Le Pape", "L'Amoureux", "Le Chariot", "La Justice","L'Ermite", "La Roue de Fortune", "La Force", "Le Pendu", "L'Arcane sans nom/ La Mort","Tempérance", "Le Diable", "Maison Dieu", "L'Etoile", "La Lune", "Le Soleil","Le Jugement", "Le Monde", "Le Mat"]
 
+# on stocke les differents textes que l'on va afficher a la fin
+# en fonction du tirage + des choix du user
+
+textes_arcanes = {
+  "Le Bateleur" => ["batetexte1", "batetexte2", "texte3", "texte4"],
+  "La Papesse" => ["papestexte1", "texte2", "texte3", "texte4"],
+  "L'Impératrice" => ["impertexte1", "texte2", "texte3", "texte4"],
+  "L'Empereur" => ["empereurtexte1", "texte2", "texte3", "texte4"],
+  "Le Pape" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "L'Amoureux" => ["texte1", "texte2", "texte3", "texte4"],
+  "Le Chariot" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "La Justice" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "L'Ermite" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "La Roue de Fortune" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Le Pendu" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "L'Arcane sans nom/ La Mort" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Tempérance" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Maison Dieu" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "L'Etoile" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "La Lune" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Le Soleil" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Le Jugement" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Le Monde" => ["papetexte1", "texte2", "texte3", "texte4"],
+  "Le Mat" => ["papetexte1", "texte2", "texte3", "texte4"],
+}
+
+
 # lutilisateur peut  "melanger les cartes" via un bouton
 arcanes_majeurs_mix = arcanes_majeurs.shuffle
 
@@ -10,7 +37,7 @@ arcanes_majeurs_mix = arcanes_majeurs.shuffle
 
 set_de_dix_cartes = []
   for i in (1..10)
-  puts carte_i = arcanes_majeurs_mix.sample
+  carte_i = arcanes_majeurs_mix.sample
   set_de_dix_cartes << carte_i
   end
 
@@ -97,11 +124,7 @@ puts "Il ne reste qu'une seule carte :"
 p derniere_carte = set_de_dix_cartes
 puts "---------------------------------------------------"
 
-
-
-
-
-# on store du texte pour chaque arcane, 4 textes pour chacune, selon que cela soit
+# on a store du texte ligne 7 pour chaque arcane, 4 textes pour chacune, selon que cela soit
 # pour une qualite, pour un defaut ou pour la vision de lavenir
 # ou la derniere carte du set
 
@@ -111,13 +134,28 @@ p trois_avenirs_choisis
 p derniere_carte
 puts "---------------------------------------------------"
 
-le_bateleur = {
-  text_qualite: "texte si on a choisi \'Le bateleur\'en qualité",
-  text_defaut: "texte si on a choisi \'Le bateleur\'en defaut",
-  text_avenir: "texte si on a choisi \'Le bateleur\'en avenir",
-  text_derniere: "texte si on a choisi \'Le bateleur\'en derniere carte",
-}
+tableau_texte_qualite = []
+trois_qualites_choisies.each do |element|
+tableau_texte_qualite << textes_arcanes[element][0]
+end
 
+p tableau_texte_qualite.join(". ")
 
+tableau_texte_defaut = []
+trois_defauts_choisis.each do |element|
+tableau_texte_defaut << textes_arcanes[element][1]
+end
 
+p tableau_texte_defaut.join(". ")
 
+tableau_texte_avenir = []
+trois_avenirs_choisis.each do |element|
+tableau_texte_avenir << textes_arcanes[element][2]
+end
+
+p tableau_texte_avenir.join(". ")
+
+tableau_texte_dernierecarte = []
+tableau_texte_dernierecarte << textes_arcanes[element][3]
+
+p tableau_texte_dernierecarte.join(". ")

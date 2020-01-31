@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import quizQuestions from './api/quizQuestions';
 import Quiz from './Quiz';
+import Result from './Result';
 import './App.css';
 
 class App extends React.Component {
@@ -96,6 +97,25 @@ setNextQuestion() {
   });
 }
 
+renderQuiz() {
+  return (
+    <Quiz
+      answer={this.state.answer}
+      answerOptions={this.state.answerOptions}
+      questionId={this.state.questionId}
+      question={this.state.question}
+      questionTotal={quizQuestions.length}
+      onAnswerSelected={this.handleAnswerSelected}
+    />
+  );
+}
+
+renderResult() {
+  return (
+    <Result quizResult={this.state.result} />
+  );
+}
+
 
   render() {
   return (
@@ -103,14 +123,7 @@ setNextQuestion() {
       <div className="App-header">
         <h2>React Quiz</h2>
       </div>
-      <Quiz
-        answer={this.state.answer}
-        answerOptions={this.state.answerOptions}
-        questionId={this.state.questionId}
-        question={this.state.question}
-        questionTotal={quizQuestions.length}
-        onAnswerSelected={this.handleAnswerSelected}
-      />
+      {this.state.result ? this.renderResult() : this.renderQuiz()}
     </div>
   )
 }

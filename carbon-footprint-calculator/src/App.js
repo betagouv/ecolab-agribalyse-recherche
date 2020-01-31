@@ -1,20 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
+import {render} from 'react-dom';
+import Question from './Question';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-        >
-          Hello
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="App-header">
+          <h2>React Quiz</h2>
+        </div>
+          <Question content="What is your favourite food?" />
+      </div>
+    );
+  }
 }
 
 export default App;

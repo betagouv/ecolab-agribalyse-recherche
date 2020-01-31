@@ -1,6 +1,8 @@
 import React from 'react';
 import {render} from 'react-dom';
 import quizQuestions from './api/quizQuestions';
+import Quiz from './Quiz';
+import Question from './Question';
 import './App.css';
 
 class App extends React.Component {

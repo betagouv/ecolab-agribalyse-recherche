@@ -1,8 +1,18 @@
 import React from 'react';
 import {render} from 'react-dom';
+import quizQuestions from './api/quizQuestions';
 import './App.css';
 
 class App extends React.Component {
+
+  componentDidMount() {
+    const shuffledAnswerOptions = quizQuestions.map((question) => this.shuffleArray(question.answers));
+
+    this.setState({
+      question: quizQuestions[0].question,
+      answerOptions: shuffledAnswerOptions[0]
+    });
+  }
 
   constructor(props) {
   super(props);

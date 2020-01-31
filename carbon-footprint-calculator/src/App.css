@@ -139,7 +139,6 @@ body {
   border-color: #8bc53f;
 }
 
-/* Animation */
 .fade-enter {
   opacity: 0;
 }
@@ -170,4 +169,3 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
-

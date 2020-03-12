@@ -12,6 +12,13 @@ export default ({  }) => {
 
     let result = 0
 
+    const buttonStyle = {
+      padding: '0.5em',
+      borderRadius: '26px',
+      backgroundColor: 'transparent',
+      color: 'grey',
+      margin: '10px',
+    }
 
     const elementStyle ={
       backgroundColor: 'transparent',
@@ -102,7 +109,9 @@ export default ({  }) => {
 
 
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
-            <button onClick={()=> setValue(34)} >2 🍻 par semaine</button>
+            <button onClick={()=> setValue(0)} style={buttonStyle}>Remettre à 0</button>
+            <button onClick={()=> setValue(52)} style={buttonStyle}>🍻 2 pintes/sem</button>
+            <button onClick={()=> setValue(15)} style={buttonStyle}>1 avocat/sem</button>
         </div>
 
 

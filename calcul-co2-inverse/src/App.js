@@ -32,10 +32,10 @@ class App extends Component {
       marginTop:'5vh',
       marginBottom:'10vh'
     }
-    const items = Information.filter((data)=>{
+    const items = Data.filter((data)=>{
       if(this.state.search == null)
           return data
-      else if(data.name.toLowerCase().includes(this.state.search.toLowerCase()) || data.country.toLowerCase().includes(this.state.search.toLowerCase())){
+      else if(data.transport.toLowerCase().includes(this.state.search.toLowerCase()) ){
           return data
       }
     }).map(data=>{
@@ -43,9 +43,9 @@ class App extends Component {
       <div>
         <ul>
           <li style={{position:'relative',left:'10vh'}}>
-            <span style={styleInfo}>{data.name}</span>
-            <span style={styleInfo}>{data.age}</span>
-            <span style={styleInfo}>{data.country}</span>
+            <span style={styleInfo}>{data.transport}</span>
+            <span style={styleInfo}>{data.kmperkg}</span>
+            <span style={styleInfo}>{data.emoji}</span>
           </li>
         </ul>
       </div>

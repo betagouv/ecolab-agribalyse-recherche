@@ -21,6 +21,8 @@ class App extends Component {
     this.setState({search:kgCO2})
   }
 
+
+
   render(){
 
     let result = 0
@@ -103,19 +105,22 @@ class App extends Component {
           </div>
 
 
-
-
       )
     })
 
     return (
-      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
-      <p>Avec</p>
-      <input value={this.state.value} type="text" placeholder="Nb" style={elementStyle} onChange={(e)=>this.searchSpace(e)}
-      />
-      <p>kg de CO2, je peux parcourir</p>
 
 
+        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
+        <p>Avec</p>
+        <input value={this.state.value} type="text" placeholder="Nb" style={elementStyle} onChange={(e)=>this.searchSpace(e)}
+        />
+        <p>kg de CO2, je peux parcourir</p>
+
+
+        <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
+            <button>2 🍻 par semaine</button>
+        </div>
 
 
       {items}

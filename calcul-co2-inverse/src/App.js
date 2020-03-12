@@ -1,34 +1,17 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Data from './data';
 import $ from 'jquery';
 
 
-class App extends Component {
+export default ({  }) => {
 
-  constructor(){
-    super();
+  const [value, setValue] = useState(0)
 
-    this.state={
-      search:null
-    };
-  }
-
-  searchSpace=(event)=>{
-    let kgCO2 = event.target.value;
-    this.setState({value: kgCO2});
-    this.setState({search:kgCO2})
-  }
-
-
-
-  render(){
 
     let result = 0
 
-    const cercleValeur = {
-    }
 
     const elementStyle ={
       backgroundColor: 'transparent',
@@ -44,7 +27,7 @@ class App extends Component {
       letterSpacing: '1px',
     }
     const items = Data.filter((data)=>{
-    result = this.state.search
+    result = value
       if(result == null) {
         result = 0
           return data
@@ -113,13 +96,13 @@ class App extends Component {
 
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
         <p>Avec</p>
-        <input value={this.state.value} type="text" placeholder="Nb" style={elementStyle} onChange={(e)=>this.searchSpace(e)}
+        <input value={value} type="text" placeholder="Nb" style={elementStyle} onChange={(e) => setValue(e.target.value)}
         />
         <p>kg de CO2, je peux parcourir</p>
 
 
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
-            <button>2 🍻 par semaine</button>
+            <button onClick={()=> setValue(34)} >2 🍻 par semaine</button>
         </div>
 
 
@@ -129,6 +112,5 @@ class App extends Component {
 
     )
   }
-}
 
-export default App;
+

@@ -1,3 +1,17 @@
+.distance {
+  position: relative;
+  left: calc(10vh + 10vh);
+}
+
+
+
+
+
+
+
+
+
+
 .App {
   text-align: center;
 }
@@ -12,6 +26,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;

@@ -14,47 +14,57 @@ class App extends Component {
   }
 
   searchSpace=(event)=>{
-    let keyword = event.target.value;
-    this.setState({search:keyword})
+    let kgCO2 = event.target.value;
+    this.setState({value: kgCO2});
+    this.setState({search:kgCO2})
   }
 
   render(){
-    const styleInfo = {
-      paddingRight:'10px'
+
+    let result = 0
+
+    const cercleValeur = {
+      width: '20px',
+      borderRadius: '50%',
+      backgroundColor: 'red',
     }
+
     const elementStyle ={
-      border:'solid',
-      borderRadius:'10px',
-      position:'relative',
-      left:'10vh',
-      height:'3vh',
-      width:'20vh',
-      marginTop:'5vh',
-      marginBottom:'10vh'
+      backgroundColor: 'transparent',
+      margin: '9vh',
+      width: '200px',
+      borderStyle: 'none none solid',
+      borderWidth: '1px 1px 3px',
+      borderColor: '#000',
+      borderRadius: '0px',
+      fontFamily: 'sans-serif',
+      fontSize: '28px',
+      lineHeight: '40px',
+      letterSpacing: '1px',
     }
     const items = Data.filter((data)=>{
-      if(this.state.search == null)
-          return data
-      else if(data.transport.toLowerCase().includes(this.state.search.toLowerCase()) ){
+    result = this.state.search
+      if(result == null)
+          return
+      else {
           return data
       }
+
     }).map(data=>{
       return(
       <div>
-        <ul>
-          <li style={{position:'relative',left:'10vh'}}>
-            <span style={styleInfo}>{data.transport}</span>
-            <span style={styleInfo}>{data.kmperkg}</span>
-            <span style={styleInfo}>{data.emoji}</span>
-          </li>
-        </ul>
+          <div>
+
+            <span style={{marginLeft: result * data.kmperkg }}>{data.emoji}</span>
+            <span>{result * data.kmperkg}</span>
+          </div>
       </div>
       )
     })
 
     return (
       <div>
-      <input type="text" placeholder="Enter item to be searched" style={elementStyle} onChange={(e)=>this.searchSpace(e)} />
+      <input value={this.state.value} type="text" placeholder="Nb de kg/Co2" style={elementStyle} onChange={(e)=>this.searchSpace(e)} />
       {items}
       </div>
     )

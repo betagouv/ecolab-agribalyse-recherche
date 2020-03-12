@@ -12,11 +12,6 @@ const Data = [
     "emoji":"✈️"
   },
   {
-    "transport":"Bike",
-    "kmperkg":43000,
-    "emoji":"🚲"
-  },
-  {
     "transport":"Bus",
     "kmperkg":32,
     "emoji":"🚍"

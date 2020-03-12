@@ -24,9 +24,6 @@ class App extends Component {
     let result = 0
 
     const cercleValeur = {
-      width: '20px',
-      borderRadius: '50%',
-      backgroundColor: 'red',
     }
 
     const elementStyle ={
@@ -50,14 +47,29 @@ class App extends Component {
           return data
       }
 
-    }).map(data=>{
+    }).map((data, index)=>{
       return(
       <div>
-          <div>
+      <div id="container">
 
-            <span style={{marginLeft: result * data.kmperkg }}>{data.emoji}</span>
-            <span>{result * data.kmperkg}</span>
-          </div>
+        <div id="cercles">
+            <div style={{
+              position: 'absolute',
+              top: (result * 500 /52) - (result * data.kmperkg /52),
+              left: (result * 500 /52) - (result * data.kmperkg /52),
+              right: '0px',
+              bottom: '0px',
+              width: result * data.kmperkg * (2/52),
+              height: result * data.kmperkg * (2/52),
+              backgroundColor: 'transparent',
+              border: 'solid 2em',
+              borderColor: data.color,
+              borderRadius:'50%',
+              zIndex: index + 2,
+             }}
+             ></div>
+        </div>
+      </div>
       </div>
       )
     })

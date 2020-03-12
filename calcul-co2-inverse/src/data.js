@@ -4,17 +4,26 @@ const Data = [
   {
     "transport":"Train",
     "kmperkg":500,
-    "emoji":"🚄"
+    "emoji":"🚄",
+    "color":"red",
   },
   {
     "transport":"Plane",
     "kmperkg":3,
-    "emoji":"✈️"
+    "emoji":"✈️",
+    "color":"black",
   },
   {
     "transport":"Bus",
     "kmperkg":32,
-    "emoji":"🚍"
+    "emoji":"🚍",
+    "color":"pink",
+  },
+  {
+    "transport":"Train vapeur",
+    "kmperkg":167,
+    "emoji":"🚂",
+    "color":"blue",
   }
 ];
 

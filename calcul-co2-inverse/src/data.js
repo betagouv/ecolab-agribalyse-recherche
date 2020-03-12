@@ -24,6 +24,12 @@ const Data = [
     "kmperkg":167,
     "emoji":"🚂",
     "color":"blue",
+  },
+  {
+    "transport":"Pied",
+    "kmperkg":700,
+    "emoji":"🏃🏾",
+    "color":"brown",
   }
 ];
 

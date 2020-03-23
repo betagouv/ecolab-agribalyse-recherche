@@ -110,7 +110,7 @@ export default ({  }) => {
 
         <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', marginLeft: '100px',}}>
             <button onClick={()=> setValue(0)} style={buttonStyle}>Remettre à 0</button>
-            <button onClick={()=> setValue(52)} style={buttonStyle}>🍻 2 pintes/sem</button>
+            <button onClick={()=> setValue(40)} style={buttonStyle}>🍻 2 pintes/sem</button>
             <button onClick={()=> setValue(15)} style={buttonStyle}>1 avocat/sem</button>
         </div>
 

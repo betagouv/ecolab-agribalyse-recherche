@@ -29,7 +29,7 @@ const Data = [
     "transport":"Pied",
     "kmperkg":700,
     "emoji":"🏃🏾",
-    "color":"brown",
+    "color":"green",
   }
 ];
 

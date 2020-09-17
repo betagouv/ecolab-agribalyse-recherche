@@ -1,0 +1,33 @@
+.md-form .prefix{
+    left: 0;
+    top: 12px;
+
+}
+
+.md-form .prefix~label {
+/*background-color: white;*/
+padding-right: 0.2em;
+padding-left: 0.2em;
+ }
+
+.md-form:focus {
+  color: grey;
+}
+
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: grey;
+}
+
+
+.banner {
+  background-image: url("https://bit.ly/2RAbMCr");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-opacity: 0.6;
+}
